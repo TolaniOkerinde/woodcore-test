@@ -10,4 +10,4 @@ https://api.postman.com/collections/20480479-911435e4-11d0-46ce-8ea0-03063a28c6a
 
 # TransactionServiceImpl and AccountServiceImpl
 These service classes contains the necessary logic needed for completing the task.
-Unit test were written for methods in the these classes using Mockito and Junit5
+Unit test was written for methods in the these classes using Mockito and Junit5
