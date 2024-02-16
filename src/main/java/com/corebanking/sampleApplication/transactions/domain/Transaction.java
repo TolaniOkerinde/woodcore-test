@@ -21,50 +21,50 @@ import java.time.Instant;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+
 @Data
 @NoArgsConstructor
 @Entity
 @Table(name = "transactions")
 public class Transaction {
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        @Column(name = "id")
-        private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
 
-        @Column(name = "from_account")
-        private String fromAccount;
+    @Column(name = "from_account")
+    private String fromAccount;
 
-        @Column(name = "toaccount")
-        private String toAccount;
+    @Column(name = "toaccount")
+    private String toAccount;
 
-        @Column(name = "transaction_type")
-        private String transactionType;
+    @Column(name = "transaction_type")
+    private String transactionType;
 
-        @Column(name = "note")
-        private String note;
+    @Column(name = "note")
+    private String note;
 
-        @Column(name = "sender_name")
-        private String senderName;
-        @Column(name = "receiver_name")
-        private String receiverName;
-        @Column(name = "transaction_reference")
-        private String transactionReference;
+    @Column(name = "sender_name")
+    private String senderName;
+    @Column(name = "receiver_name")
+    private String receiverName;
+    @Column(name = "transaction_reference")
+    private String transactionReference;
 
-        @Column(name = "amount")
-        private BigDecimal amount;
+    @Column(name = "amount")
+    private BigDecimal amount;
 
-        @Column(name = "created_at", nullable = false)
-        private Date createdAt;
+    @Column(name = "created_at", nullable = false)
+    private Date createdAt;
 
 
+    public Optional<Instant> getCreatedDate() {
+        return null == this.createdAt ? Optional.empty() : Optional.of(this.createdAt.toInstant());
+    }
 
-        public Optional<Instant> getCreatedDate() {
-            return null == this.createdAt ? Optional.empty() : Optional.of(this.createdAt.toInstant());
-        }
-        public void setCreatedDate(final Instant createdDate) {
-            this.createdAt = null == createdDate ? null : Date.from(createdDate);
-        }
-
+    public void setCreatedDate(final Instant createdDate) {
+        this.createdAt = null == createdDate ? null : Date.from(createdDate);
+    }
 
 
 }

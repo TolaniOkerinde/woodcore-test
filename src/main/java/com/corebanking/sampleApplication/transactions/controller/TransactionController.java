@@ -20,21 +20,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class TransactionController {
     private final TransactionService transactionService;
+
     @PostMapping("/withdraw")
-    public ResponseEntity<DepositResponseDto> withdrawMoney(
-            @Valid @RequestBody WithdrawMoneyRequestDto request) {
+    public ResponseEntity<DepositResponseDto> withdrawMoney(@Valid @RequestBody WithdrawMoneyRequestDto request) {
         return ResponseEntity.ok(transactionService.withdrawMoney(request));
     }
 
     @PostMapping("/transfer")
-    public ResponseEntity<DepositResponseDto> transferMoney(
-            @Valid @RequestBody TransferMoneyRequestDto request) {
+    public ResponseEntity<DepositResponseDto> transferMoney(@Valid @RequestBody TransferMoneyRequestDto request) {
         return ResponseEntity.ok(transactionService.transferMoney(request));
     }
 
     @PostMapping("/deposit")
-    public ResponseEntity<DepositResponseDto> depositMoney(
-            @Valid @RequestBody DepositRequestDto request) {
+    public ResponseEntity<DepositResponseDto> depositMoney(@Valid @RequestBody DepositRequestDto request) {
         return ResponseEntity.ok(transactionService.depositMoney(request));
     }
 

@@ -7,6 +7,8 @@ import com.corebanking.sampleApplication.transactions.dto.TransferMoneyRequestDt
 
 public interface TransactionService {
     DepositResponseDto depositMoney(DepositRequestDto depositMoneyRequestDto);
-    DepositResponseDto withdrawMoney (WithdrawMoneyRequestDto depositMoneyRequestDto);
-    DepositResponseDto transferMoney (TransferMoneyRequestDto transferMoneyRequestDto);
+
+    DepositResponseDto withdrawMoney(WithdrawMoneyRequestDto depositMoneyRequestDto);
+
+    DepositResponseDto transferMoney(TransferMoneyRequestDto transferMoneyRequestDto);
 }

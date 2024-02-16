@@ -137,7 +137,6 @@ class AccountServiceImplTest {
     }
 
 
-
     @Test
     void testUpdateAccountDetails_Success() {
         // Mock input data
@@ -187,7 +186,7 @@ class AccountServiceImplTest {
     }
 
     @Test
-    void testUpdateAccountDetails_AccountNotFound() throws AccountNumberNotFoundException{
+    void testUpdateAccountDetails_AccountNotFound() throws AccountNumberNotFoundException {
         String accountNumber = "nonexistent";
         UpdateAccountRequestDto updateRequestDto = new UpdateAccountRequestDto();
         updateRequestDto.setStatus("newStatus");
@@ -238,7 +237,7 @@ class AccountServiceImplTest {
     }
 
     @Test
-    void testCloseAccount_AccountNotFound() throws AccountNumberNotFoundException{
+    void testCloseAccount_AccountNotFound() throws AccountNumberNotFoundException {
         String accountNumber = "nonexistent";
 
         when(accountRepository.findByAccountNumber(accountNumber)).thenReturn(null);

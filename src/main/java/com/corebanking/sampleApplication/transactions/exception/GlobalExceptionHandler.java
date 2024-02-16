@@ -14,6 +14,7 @@ public class GlobalExceptionHandler {
     public ErrorResponse handleAccountNumberNotFoundException(AccountNumberNotFoundException ex) {
         return new ErrorResponse(ex.getMessage());
     }
+
     @ExceptionHandler(FailedTransactionException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
